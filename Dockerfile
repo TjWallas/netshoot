@@ -8,6 +8,8 @@ RUN set -ex \
     bridge-utils \
     netcat-openbsd \
     util-linux \
+    net-tools \
+    mtr \
     iptables \
     iputils \
     iproute2 \
@@ -21,8 +23,13 @@ RUN set -ex \
     ngrep \
     iperf \
     nmap \
+    nmap-nping \
     conntrack-tools \
-    socat
+    socat \
+    && apk add --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing \
+    hping3 \
+    && apk add --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/community \
+    arping
 # apparmor issue #14140
 RUN mv /usr/sbin/tcpdump /usr/bin/tcpdump
 
