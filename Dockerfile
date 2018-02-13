@@ -1,4 +1,4 @@
-FROM alpine:3.6
+FROM alpine:3.7
 
 RUN set -ex \
     && echo "http://nl.alpinelinux.org/alpine/edge/main" >> /etc/apk/repositories \
@@ -27,9 +27,9 @@ RUN set -ex \
     conntrack-tools \
     socat \
     && apk add --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing \
-    hping3 \
-    && apk add --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/community \
-    arping
+    hping3
+    # && apk add --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/community \
+    # arping
 # apparmor issue #14140
 RUN mv /usr/sbin/tcpdump /usr/bin/tcpdump
 
