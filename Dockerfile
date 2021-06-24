@@ -31,7 +31,7 @@ RUN set -ex \
     # && apk add --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/community \
     # arping
 # apparmor issue #14140
-RUN mv /usr/sbin/tcpdump /usr/bin/tcpdump
+# RUN mv /usr/sbin/tcpdump /usr/bin/tcpdump
 
 ADD netgen.sh /usr/local/bin/netgen
 
